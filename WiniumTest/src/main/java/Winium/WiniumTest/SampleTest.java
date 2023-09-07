@@ -23,6 +23,14 @@ public class SampleTest {
 	@BeforeTest
 	public void setupEnvironment() {
 		assertEquals(displayScale(), 1.0, "\nChange Display scale to 100% else test may not run propery.\n");
+
+		try {
+			Port.killPort(winiumPort);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		options = new DesktopOptions();
 		options.setApplicationPath("C:\\Windows\\System32\\calc.exe");
 		File driverPath = new File("Winium.Desktop.Driver.exe");
@@ -55,6 +63,12 @@ public class SampleTest {
 	public void cleanupEnvironment() {
 		driver.findElement(By.name("Close Calculator")).click();
 		service.stop();
+		try {
+			Port.killPort(winiumPort);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private static double displayScale() {
