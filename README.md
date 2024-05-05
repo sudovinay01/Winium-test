@@ -4,7 +4,7 @@ Sample project to know about winium driver.
 - JAVA 17
 - Eclipse 2023-06
 - testng
-- winium driver
+- winium driver - https://github.com/2gis/Winium.Desktop/releases
 
 ## Setup
 - clone this repo.
